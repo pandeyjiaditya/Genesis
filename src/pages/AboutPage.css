@@ -273,10 +273,8 @@
 
 @media (max-width: 768px) {
   .about-page {
-    height: fit-content;
-    min-height: 100vh;
-    overflow-y: visible;
-    padding-bottom: 0;
+    height: 100vh;
+    overflow: hidden;
   }
 
   .content-box {
@@ -311,13 +309,7 @@
   }
 
   .player-character {
-    position: relative;
-    width: 120px;
-    height: 248px;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 430px;
-    margin-bottom: 20px;
+    display: none;
   }
 
   .nav-separator {
@@ -355,9 +347,7 @@
   }
 
   .player-character {
-    width: 100px;
-    height: 207px;
-    margin-top: 420px;
+    display: none;
   }
 
   .nav-separator {
