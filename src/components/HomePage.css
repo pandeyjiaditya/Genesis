@@ -1,0 +1,312 @@
+.home-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+}
+
+/* Background Video */
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Top Left Logo */
+.top-left-logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+}
+
+.logo-container {
+  background: #c6c6c6;
+  border: 2px solid #000;
+  padding: 10px;
+  box-shadow: inset 2px 2px 0 rgba(255, 246, 246, 0.9),
+    inset -2px -2px 0 rgba(98, 98, 98, 0.9), 2px 2px 0 rgba(0, 0, 0, 0.3);
+  width: 65px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.genesis-icon {
+  width: 78px;
+  height: 93px;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Top Right Menu */
+.top-right-menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.menu-button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-button:hover {
+  transform: scale(1.05);
+}
+
+.menu-button:active {
+  transform: scale(0.95);
+}
+
+.menu-icon {
+  width: 200px;
+  height: auto;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+.menu-text {
+  font-family: "Minecraft", "Press Start 2P", monospace;
+  font-size: 32px;
+  color: #4c4c4c;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Center Content */
+.center-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  text-align: center;
+}
+
+.genesis-logo {
+  margin-bottom: 0;
+}
+
+.main-logo {
+  width: 460px;
+  height: 117px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.6));
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Register Button */
+.register-section {
+  margin-top: 100px;
+}
+
+.register-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0;
+  transition: all 0.3s ease;
+  position: relative;
+  line-height: 0;
+}
+
+.register-button:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.6));
+}
+
+.register-button:active {
+  transform: scale(0.98);
+}
+
+.register-button img,
+.main-logo {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+  transition: filter 0.3s ease;
+}
+
+.register-button img {
+  max-width: 350px;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Bottom Event Label */
+.event-label {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.event-container {
+  background: #c6c6c6;
+  border: 2px solid #000;
+  padding: 20px 30px;
+  box-shadow: inset 2px 2px 0 rgba(255, 246, 246, 0.9),
+    inset -2px -2px 0 rgba(98, 98, 98, 0.9), 2px 2px 0 rgba(0, 0, 0, 0.3);
+  min-width: 343px;
+  height: 106px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.event-text {
+  font-family: "Minecraftia", "Press Start 2P", monospace;
+  font-size: 24px;
+  color: #4c4c4c;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .main-logo {
+    width: 380px;
+    height: 96px;
+  }
+
+  .tagline-image {
+    width: 289px;
+    height: 51px;
+  }
+
+  .register-button img {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-left-logo {
+    top: 10px;
+    left: 10px;
+  }
+
+  .logo-container {
+    width: 70px;
+    height: 87px;
+  }
+
+  .genesis-icon {
+    width: 58px;
+    height: 70px;
+  }
+
+  .top-right-menu {
+    top: 10px;
+    right: 10px;
+  }
+
+  .menu-icon {
+    width: 150px;
+  }
+
+  .menu-text {
+    font-size: 24px;
+  }
+
+  .main-logo {
+    width: 340px;
+    height: 86px;
+  }
+
+  .tagline-image {
+    width: 217px;
+    height: 38px;
+  }
+
+  .register-text {
+    font-size: 32px;
+  }
+
+  .register-icon {
+    width: 50px;
+    height: 48px;
+  }
+
+  .event-container {
+    min-width: 250px;
+    height: 80px;
+    padding: 15px 20px;
+  }
+
+  .event-text {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-left-logo {
+    top: 8px;
+    left: 8px;
+  }
+
+  .logo-container {
+    width: 50px;
+    height: 62px;
+    padding: 8px;
+  }
+
+  .genesis-icon {
+    width: 42px;
+    height: 50px;
+  }
+
+  .menu-icon {
+    width: 100px;
+  }
+
+  .menu-text {
+    font-size: 18px;
+  }
+
+  .main-logo {
+    width: 320px;
+    height: 81px;
+  }
+
+  .tagline-image {
+    width: 180px;
+    height: 32px;
+  }
+
+  .register-button img {
+    max-width: 160px;
+  }
+
+  .event-container {
+    min-width: 200px;
+    height: 60px;
+  }
+
+  .event-text {
+    font-size: 16px;
+  }
+}
