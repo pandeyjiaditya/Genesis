@@ -288,8 +288,8 @@
   }
 
   .main-logo {
-    width: 320px;
-    height: 81px;
+    width: 450px;
+    height: 114px;
   }
 
   .tagline-image {
@@ -298,7 +298,7 @@
   }
 
   .register-button img {
-    max-width: 160px;
+    max-width: 120px;
   }
 
   .event-container {
