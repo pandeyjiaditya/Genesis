@@ -50,7 +50,7 @@ export default function PrizePoolPage() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
+        viewport={{ once: false, amount: 0.3 }}
       >
         <div className="prize-pool-separator-container">
           <img
@@ -70,7 +70,7 @@ export default function PrizePoolPage() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        viewport={{ once: true }}
+        viewport={{ once: false, amount: 0.3 }}
       >
         {/* Main Container with Borders */}
         <div className="prize-pool-main-box">

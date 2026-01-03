@@ -9,7 +9,7 @@ const TimelinePage = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
+      viewport={{ once: false, amount: 0.2 }}
     >
       {/* Cloud Transition Effects */}
       {/* Left to Right Clouds */}
@@ -20,7 +20,7 @@ const TimelinePage = () => {
         initial={{ x: "-100%", opacity: 0 }}
         whileInView={{ x: "120%", opacity: [0, 1, 1, 0] }}
         transition={{ duration: 3, ease: "linear" }}
-        viewport={{ once: true }}
+        viewport={{ once: false, amount: 0.2 }}
       />
       <motion.img
         src="/assets/cloud 2.png"
@@ -29,7 +29,7 @@ const TimelinePage = () => {
         initial={{ x: "-100%", opacity: 0 }}
         whileInView={{ x: "120%", opacity: [0, 1, 1, 0] }}
         transition={{ duration: 4, delay: 0.5, ease: "linear" }}
-        viewport={{ once: true }}
+        viewport={{ once: false, amount: 0.2 }}
       />
       <motion.img
         src="/assets/cloud1.png"
@@ -38,7 +38,7 @@ const TimelinePage = () => {
         initial={{ x: "-100%", opacity: 0 }}
         whileInView={{ x: "120%", opacity: [0, 1, 1, 0] }}
         transition={{ duration: 3.5, delay: 1, ease: "linear" }}
-        viewport={{ once: true }}
+        viewport={{ once: false, amount: 0.2 }}
       />
 
       {/* Right to Left Clouds */}
@@ -49,7 +49,7 @@ const TimelinePage = () => {
         initial={{ x: "120%", opacity: 0 }}
         whileInView={{ x: "-100%", opacity: [0, 1, 1, 0] }}
         transition={{ duration: 3.5, delay: 0.3, ease: "linear" }}
-        viewport={{ once: true }}
+        viewport={{ once: false, amount: 0.2 }}
       />
       <motion.img
         src="/assets/cloud1.png"
@@ -58,7 +58,7 @@ const TimelinePage = () => {
         initial={{ x: "120%", opacity: 0 }}
         whileInView={{ x: "-100%", opacity: [0, 1, 1, 0] }}
         transition={{ duration: 4.5, delay: 0.8, ease: "linear" }}
-        viewport={{ once: true }}
+        viewport={{ once: false, amount: 0.2 }}
       />
       <motion.img
         src="/assets/cloud 2.png"
@@ -67,7 +67,7 @@ const TimelinePage = () => {
         initial={{ x: "120%", opacity: 0 }}
         whileInView={{ x: "-100%", opacity: [0, 1, 1, 0] }}
         transition={{ duration: 3.8, delay: 1.5, ease: "linear" }}
-        viewport={{ once: true }}
+        viewport={{ once: false, amount: 0.2 }}
       />
 
       <img
