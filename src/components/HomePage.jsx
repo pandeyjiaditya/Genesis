@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import "./HomePage.css";
 import "../pages/AboutPage.css";
+import TimelinePage from "../pages/TimelinePage";
 
 export default function HomePage() {
   return (
@@ -181,6 +182,11 @@ export default function HomePage() {
             className="player-image"
           />
         </motion.div>
+      </section>
+
+      {/* Timeline Section */}
+      <section id="timeline">
+        <TimelinePage />
       </section>
     </>
   );
