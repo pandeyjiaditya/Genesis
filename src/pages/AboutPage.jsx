@@ -23,37 +23,8 @@ export default function AboutPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        {/* Top Left Logo */}
-        <div className="nav-logo">
-          <div className="logo-container">
-            <img
-              src="/assets/icons/Group 1000012486.svg"
-              alt="Genesis Logo"
-              className="genesis-icon"
-            />
-          </div>
-        </div>
-
         {/* Navigation Title */}
         <h1 className="nav-title">ABOUT GENESIS</h1>
-
-        {/* Top Right Icons */}
-        <div className="nav-icons">
-          <button className="icon-button">
-            <img
-              src="/assets/icons/discord-icon.svg"
-              alt="Discord"
-              className="social-icon"
-            />
-          </button>
-          <button className="icon-button">
-            <img
-              src="/assets/icons/instagram-icon.svg"
-              alt="Instagram"
-              className="social-icon"
-            />
-          </button>
-        </div>
       </motion.div>
 
       {/* Main Content Box */}

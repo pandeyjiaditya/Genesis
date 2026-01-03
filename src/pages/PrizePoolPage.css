@@ -1,0 +1,605 @@
+.prize-pool-page {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0;
+  overflow: hidden;
+  background-color: #000;
+  backdrop-filter: blur(17.5px);
+}
+
+/* Background Layer 1 */
+.prize-pool-bg-blur {
+  position: absolute;
+  top: 0;
+  left: -231px;
+  width: 1983px;
+  height: 1110px;
+  opacity: 0.73;
+  z-index: 1;
+}
+
+.prize-pool-bg-img-1 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Background Layer 2 */
+.prize-pool-bg-effect {
+  position: absolute;
+  top: 35px;
+  left: -223px;
+  width: 1731px;
+  height: 989px;
+  z-index: 1;
+}
+
+.prize-pool-bg-img-2 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Navigation Container */
+.prize-pool-nav-container {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+/* Separator Container */
+.prize-pool-separator-container {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  height: 68px;
+  z-index: 3;
+}
+
+.prize-pool-separator-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Prize Pool Content Container */
+.prize-pool-content-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 40px 20px;
+  margin-top: 20px;
+}
+
+/* Main Box Container */
+.prize-pool-main-box {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  max-width: 1360px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid #626262;
+  padding: 30px;
+  border-radius: 4px;
+}
+
+/* Left Panel - Track Selection */
+.prize-pool-left-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 0 0 320px;
+  border-right: 4px solid #626262;
+  padding-right: 30px;
+}
+
+.prize-pool-track-card {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  background: #3e3937;
+  border: 2px solid #626262;
+  overflow: visible;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 4px 0 #252525;
+  transform: translateY(0);
+}
+
+.prize-pool-track-card:hover {
+  background: #4a4644;
+  box-shadow: 0 2px 0 #252525;
+  transform: translateY(2px);
+}
+
+.prize-pool-track-card.active {
+  background: #4a4644;
+  box-shadow: 0 6px 0 #252525, inset 2px 2px 0 #66615f;
+  transform: translateY(-2px);
+}
+
+.prize-pool-track-card.active:hover {
+  transform: translateY(0);
+  box-shadow: 0 4px 0 #252525, inset 2px 2px 0 #66615f;
+}
+
+.prize-pool-track-btn {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: filter 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.prize-pool-track-card:hover .prize-pool-track-btn {
+  filter: brightness(1.1);
+}
+
+.prize-pool-track-text {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  font-family: "Minecraftia", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #999;
+  margin: 0;
+  line-height: 1.3;
+  z-index: 1;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Right Panel - Prize Cards */
+.prize-pool-right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+.prize-pool-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 150px;
+  background: #3e3937;
+  border: 2px solid #626262;
+  overflow: hidden;
+  box-shadow: 0 8px 0 #252525, inset 4px 4px 0 #66615f,
+    inset -4px -4px 0 #514d4b;
+  transition: all 0.3s ease;
+}
+
+.prize-pool-card-image {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  display: block;
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+.prize-pool-card-btn {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.prize-pool-card-content {
+  position: relative;
+  z-index: 1;
+  margin-left: 160px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: calc(100% - 160px);
+  padding: 0 20px;
+}
+
+.prize-pool-rank {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.prize-pool-rank-number {
+  font-family: "Minecraftia", sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1;
+}
+
+.prize-pool-rank-suffix {
+  font-family: "Minecraftia", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1;
+}
+
+.prize-pool-rank-label {
+  font-family: "Minecraftia", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1;
+}
+
+.prize-pool-amount {
+  font-family: "Minecraftia", sans-serif;
+  font-size: 56px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1;
+  margin-left: auto;
+  padding-right: 20px;
+}
+
+.prize-pool-amount-img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-left: auto;
+  padding-right: 20px;
+}
+
+.prize-pool-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Minecraftia", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  color: #000;
+  text-align: center;
+  margin: 0;
+  line-height: normal;
+  z-index: 4;
+  white-space: nowrap;
+  padding: 0 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 1440px) {
+  .prize-pool-title {
+    font-size: 32px;
+  }
+
+  .prize-pool-separator-container {
+    height: 65px;
+  }
+
+  .prize-pool-main-box {
+    max-width: 1200px;
+    padding: 25px;
+    gap: 15px;
+  }
+
+  .prize-pool-left-panel {
+    flex: 0 0 280px;
+    padding-right: 25px;
+  }
+
+  .prize-pool-track-card {
+    height: 110px;
+  }
+
+  .prize-pool-card {
+    height: 140px;
+  }
+
+  .prize-pool-card-image {
+    height: 140px;
+  }
+
+  .prize-pool-rank-number {
+    font-size: 42px;
+  }
+
+  .prize-pool-rank-label {
+    font-size: 28px;
+  }
+
+  .prize-pool-amount {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .prize-pool-title {
+    font-size: 28px;
+  }
+
+  .prize-pool-separator-container {
+    height: 60px;
+  }
+
+  .prize-pool-main-box {
+    max-width: 1000px;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .prize-pool-left-panel {
+    flex: 1;
+    flex-direction: row;
+    gap: 15px;
+    border-right: none;
+    border-bottom: 4px solid #626262;
+    padding-right: 0;
+    padding-bottom: 20px;
+  }
+
+  .prize-pool-track-card {
+    flex: 1;
+    height: 100px;
+  }
+
+  .prize-pool-card {
+    height: 130px;
+  }
+
+  .prize-pool-card-image {
+    height: 130px;
+  }
+
+  .prize-pool-rank-number {
+    font-size: 36px;
+  }
+
+  .prize-pool-rank-label {
+    font-size: 24px;
+  }
+
+  .prize-pool-amount {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 768px) {
+  .prize-pool-title {
+    font-size: 24px;
+  }
+
+  .prize-pool-separator-container {
+    height: 55px;
+  }
+
+  .prize-pool-content-container {
+    padding: 30px 15px;
+  }
+
+  .prize-pool-main-box {
+    max-width: 900px;
+    padding: 15px;
+  }
+
+  .prize-pool-track-card {
+    height: 90px;
+  }
+
+  .prize-pool-track-text {
+    font-size: 14px;
+  }
+
+  .prize-pool-card {
+    height: 120px;
+  }
+
+  .prize-pool-card-image {
+    height: 120px;
+  }
+
+  .prize-pool-card-btn {
+    width: 120px;
+  }
+
+  .prize-pool-card-content {
+    margin-left: 130px;
+    width: calc(100% - 130px);
+  }
+
+  .prize-pool-rank-number {
+    font-size: 32px;
+  }
+
+  .prize-pool-rank-label {
+    font-size: 20px;
+  }
+
+  .prize-pool-amount {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  .prize-pool-title {
+    font-size: 20px;
+  }
+
+  .prize-pool-separator-container {
+    height: 50px;
+  }
+
+  .prize-pool-content-container {
+    padding: 20px 10px;
+  }
+
+  .prize-pool-main-box {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .prize-pool-track-card {
+    height: 75px;
+  }
+
+  .prize-pool-track-text {
+    font-size: 12px;
+  }
+
+  .prize-pool-card {
+    height: 100px;
+  }
+
+  .prize-pool-card-image {
+    height: 100px;
+  }
+
+  .prize-pool-card-btn {
+    width: 100px;
+  }
+
+  .prize-pool-card-content {
+    margin-left: 110px;
+    width: calc(100% - 110px);
+    padding: 0 12px;
+  }
+
+  .prize-pool-rank-number {
+    font-size: 28px;
+  }
+
+  .prize-pool-rank-label {
+    font-size: 18px;
+  }
+
+  .prize-pool-amount {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .prize-pool-title {
+    font-size: 16px;
+  }
+
+  .prize-pool-separator-container {
+    height: 45px;
+  }
+
+  .prize-pool-content-container {
+    padding: 15px 8px;
+  }
+
+  .prize-pool-main-box {
+    max-width: 100%;
+    padding: 8px;
+    gap: 10px;
+  }
+
+  .prize-pool-track-card {
+    height: 65px;
+  }
+
+  .prize-pool-track-text {
+    font-size: 11px;
+  }
+
+  .prize-pool-card {
+    height: 90px;
+  }
+
+  .prize-pool-card-image {
+    height: 90px;
+  }
+
+  .prize-pool-card-btn {
+    width: 85px;
+  }
+
+  .prize-pool-card-content {
+    margin-left: 95px;
+    width: calc(100% - 95px);
+    padding: 0 10px;
+    gap: 8px;
+  }
+
+  .prize-pool-rank-number {
+    font-size: 24px;
+  }
+
+  .prize-pool-rank-label {
+    font-size: 16px;
+  }
+
+  .prize-pool-amount {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 360px) {
+  .prize-pool-title {
+    font-size: 14px;
+  }
+
+  .prize-pool-separator-container {
+    height: 40px;
+  }
+
+  .prize-pool-content-container {
+    padding: 12px 5px;
+  }
+
+  .prize-pool-main-box {
+    max-width: 100%;
+    padding: 6px;
+  }
+
+  .prize-pool-track-card {
+    height: 55px;
+  }
+
+  .prize-pool-track-text {
+    font-size: 10px;
+  }
+
+  .prize-pool-card {
+    height: 80px;
+  }
+
+  .prize-pool-card-image {
+    height: 80px;
+  }
+
+  .prize-pool-card-btn {
+    width: 70px;
+  }
+
+  .prize-pool-card-content {
+    margin-left: 80px;
+    width: calc(100% - 80px);
+    padding: 0 8px;
+    gap: 6px;
+  }
+
+  .prize-pool-rank-number {
+    font-size: 20px;
+  }
+
+  .prize-pool-rank-label {
+    font-size: 14px;
+  }
+
+  .prize-pool-amount {
+    font-size: 24px;
+  }
+}

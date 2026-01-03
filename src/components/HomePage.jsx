@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import "./HomePage.css";
 import "../pages/AboutPage.css";
 import TimelinePage from "../pages/TimelinePage";
+import PrizePoolPage from "../pages/PrizePoolPage";
 
 export default function HomePage() {
   return (
@@ -116,37 +117,8 @@ export default function HomePage() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          {/* Top Left Logo */}
-          <div className="nav-logo">
-            <div className="logo-container">
-              <img
-                src="/assets/icons/Group 1000012422 2.svg"
-                alt="Genesis Logo"
-                className="genesis-icon"
-              />
-            </div>
-          </div>
-
           {/* Navigation Title */}
           <h1 className="nav-title">ABOUT GENESIS</h1>
-
-          {/* Top Right Icons */}
-          <div className="nav-icons">
-            <button className="icon-button">
-              <img
-                src="/assets/icons/843b6b77f46c1c3a69091d13fa9593d7 1.svg"
-                alt="Discord"
-                className="social-icon"
-              />
-            </button>
-            <button className="icon-button">
-              <img
-                src="/assets/icons/1737d5e028e7ecb7605da2756202440f 1.svg"
-                alt="Instagram"
-                className="social-icon"
-              />
-            </button>
-          </div>
         </motion.div>
 
         {/* Main Content Box */}
@@ -187,6 +159,11 @@ export default function HomePage() {
       {/* Timeline Section */}
       <section id="timeline">
         <TimelinePage />
+      </section>
+
+      {/* Prize Pool Section */}
+      <section id="prizes">
+        <PrizePoolPage />
       </section>
     </>
   );
