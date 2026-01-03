@@ -30,11 +30,13 @@
   left: 50%;
   transform: translate(-50%, -200%);
   z-index: 2;
+  transition: all 0.3s ease;
 }
 
 .genesis-logo-loading {
   width: 400px;
-  height: 108px;
+  height: auto;
+  max-width: 90vw;
   object-fit: contain;
 }
 
@@ -121,11 +123,13 @@
   left: 50%;
   transform: translateX(-50%);
   width: 1055px;
+  max-width: 90vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
   z-index: 2;
+  transition: all 0.3s ease;
 }
 
 .loading-bar-outer {
@@ -167,29 +171,12 @@
 /* Responsive Design */
 @media (max-width: 1440px) {
   .genesis-logo-loading {
-    width: 600px;
-    height: 162px;
+    width: 350px;
   }
 
   .loading-bar-container {
     width: 900px;
     top: 580px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .genesis-logo-container {
-    top: 180px;
-  }
-
-  .genesis-logo-loading {
-    width: 500px;
-    height: 135px;
-  }
-
-  .loading-bar-container {
-    width: 700px;
-    top: 500px;
   }
 
   .loading-percentage {
@@ -197,66 +184,175 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .genesis-logo-container {
-    top: 150px;
+    transform: translate(-50%, -180%);
   }
 
   .genesis-logo-loading {
-    width: 400px;
-    height: 108px;
+    width: 320px;
+  }
+
+  .loading-bar-container {
+    width: 700px;
+    top: 520px;
+  }
+
+  .loading-percentage {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 768px) {
+  .genesis-logo-container {
+    transform: translate(-50%, -160%);
+  }
+
+  .genesis-logo-loading {
+    width: 280px;
   }
 
   .loading-spinner {
     width: 60px;
     height: 60px;
+    top: 48%;
   }
 
   .pixel-block {
-    width: 9px;
-    height: 9px;
+    width: 8px;
+    height: 8px;
+  }
+
+  .pixel-block:nth-child(1) {
+    left: 26px;
+  }
+
+  .pixel-block:nth-child(2) {
+    right: 7px;
+    top: 7px;
+  }
+
+  .pixel-block:nth-child(3) {
+    right: 0;
+    top: 26px;
+  }
+
+  .pixel-block:nth-child(4) {
+    right: 7px;
+    bottom: 7px;
+  }
+
+  .pixel-block:nth-child(5) {
+    left: 26px;
+  }
+
+  .pixel-block:nth-child(6) {
+    left: 7px;
+    bottom: 7px;
+  }
+
+  .pixel-block:nth-child(7) {
+    left: 0;
+    top: 26px;
+  }
+
+  .pixel-block:nth-child(8) {
+    left: 7px;
+    top: 7px;
   }
 
   .loading-bar-container {
     width: 90%;
-    top: 450px;
+    top: 65%;
   }
 
   .loading-percentage {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 
 @media (max-width: 480px) {
   .genesis-logo-container {
-    top: 120px;
+    transform: translate(-50%, -140%);
   }
 
   .genesis-logo-loading {
-    width: 300px;
-    height: 81px;
+    width: 220px;
   }
 
   .loading-spinner {
     width: 50px;
     height: 50px;
+    top: 48%;
   }
 
   .pixel-block {
-    width: 7px;
-    height: 7px;
+    width: 6px;
+    height: 6px;
+  }
+
+  .pixel-block:nth-child(1) {
+    left: 22px;
+  }
+
+  .pixel-block:nth-child(2) {
+    right: 6px;
+    top: 6px;
+  }
+
+  .pixel-block:nth-child(3) {
+    right: 0;
+    top: 22px;
+  }
+
+  .pixel-block:nth-child(4) {
+    right: 6px;
+    bottom: 6px;
+  }
+
+  .pixel-block:nth-child(5) {
+    left: 22px;
+  }
+
+  .pixel-block:nth-child(6) {
+    left: 6px;
+    bottom: 6px;
+  }
+
+  .pixel-block:nth-child(7) {
+    left: 0;
+    top: 22px;
+  }
+
+  .pixel-block:nth-child(8) {
+    left: 6px;
+    top: 6px;
   }
 
   .loading-bar-container {
     width: 85%;
-    top: 400px;
+    top: 65%;
   }
 
   .loading-bar-outer {
-    height: 25px;
+    height: 22px;
+    border: 2px solid #fff;
+  }
+
+  .loading-bar-inner {
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+  }
+
+  .loading-bar-fill {
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
   }
 
   .loading-percentage {
-    font-size: 20px;
+    font-size: 18px;
   }
 }

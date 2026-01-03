@@ -270,7 +270,6 @@
   .logo-container {
     width: 50px;
     height: 62px;
-    padding: 8px;
   }
 
   .genesis-icon {
@@ -278,34 +277,52 @@
     height: 50px;
   }
 
+  .top-right-menu {
+    top: 8px;
+    right: 8px;
+  }
+
   .menu-icon {
-    width: 100px;
+    width: 120px;
   }
 
   .menu-text {
-    font-size: 18px;
+    font-size: 20px;
+  }
+
+  .center-content {
+    gap: 20px;
   }
 
   .main-logo {
-    width: 450px;
-    height: 114px;
+    width: 280px;
+    height: auto;
   }
 
   .tagline-image {
-    width: 180px;
-    height: 32px;
+    width: 160px;
+    height: auto;
+  }
+
+  .register-section {
+    margin-top: 60px;
   }
 
   .register-button img {
-    max-width: 120px;
+    max-width: 180px;
+  }
+
+  .event-label {
+    bottom: 20px;
   }
 
   .event-container {
-    min-width: 200px;
+    min-width: 180px;
     height: 60px;
+    padding: 10px 15px;
   }
 
   .event-text {
-    font-size: 16px;
+    font-size: 14px;
   }
 }

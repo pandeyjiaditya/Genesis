@@ -18,6 +18,14 @@
   z-index: 1;
 }
 
+.timeline-mobile {
+  display: none;
+}
+
+.timeline-desktop {
+  display: block;
+}
+
 /* Cloud Transition Effects */
 .cloud-transition {
   position: absolute;
@@ -61,42 +69,122 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .cloud-transition {
+    width: 250px;
+  }
+
+  .cloud-1 {
+    width: 200px;
+  }
+
+  .cloud-2 {
+    width: 280px;
+  }
+
+  .cloud-3 {
+    width: 220px;
+  }
+
+  .cloud-4 {
+    width: 250px;
+  }
+
+  .cloud-5 {
+    width: 220px;
+  }
+
+  .cloud-6 {
+    width: 240px;
+  }
+}
+
 @media (max-width: 768px) {
   .timeline-page {
     min-height: 100vh;
   }
 
+  .timeline-desktop {
+    display: none;
+  }
+
+  .timeline-mobile {
+    display: block;
+  }
+
   .timeline-image {
     width: 100%;
     height: 100vh;
-    object-fit: cover;
+    object-fit: fill;
   }
 
   .cloud-transition {
-    width: 200px;
-  }
-
-  .cloud-1 {
     width: 180px;
   }
 
+  .cloud-1 {
+    width: 150px;
+    top: 10%;
+  }
+
   .cloud-2 {
-    width: 220px;
+    width: 200px;
+    top: 45%;
   }
 
   .cloud-3 {
-    width: 190px;
+    width: 160px;
+    top: 70%;
   }
 
   .cloud-4 {
-    width: 210px;
+    width: 180px;
+    top: 25%;
   }
 
   .cloud-5 {
-    width: 190px;
+    width: 160px;
+    top: 55%;
   }
 
   .cloud-6 {
-    width: 200px;
+    width: 170px;
+    top: 82%;
+  }
+}
+
+@media (max-width: 480px) {
+  .cloud-transition {
+    width: 120px;
+  }
+
+  .cloud-1 {
+    width: 100px;
+    top: 8%;
+  }
+
+  .cloud-2 {
+    width: 140px;
+    top: 42%;
+  }
+
+  .cloud-3 {
+    width: 110px;
+    top: 68%;
+  }
+
+  .cloud-4 {
+    width: 120px;
+    top: 22%;
+  }
+
+  .cloud-5 {
+    width: 110px;
+    top: 52%;
+  }
+
+  .cloud-6 {
+    width: 115px;
+    top: 80%;
   }
 }

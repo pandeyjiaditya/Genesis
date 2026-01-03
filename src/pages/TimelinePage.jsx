@@ -73,7 +73,12 @@ const TimelinePage = () => {
       <img
         src="/assets/timeline.png"
         alt="Timeline"
-        className="timeline-image"
+        className="timeline-image timeline-desktop"
+      />
+      <img
+        src="/assets/timelinephone.png"
+        alt="Timeline"
+        className="timeline-image timeline-mobile"
       />
     </motion.div>
   );
