@@ -133,14 +133,14 @@ export default function HomePage() {
           <div className="nav-icons">
             <button className="icon-button">
               <img
-                src="/assets/icons/discord-icon.svg"
+                src="/assets/icons/843b6b77f46c1c3a69091d13fa9593d7 1.svg"
                 alt="Discord"
                 className="social-icon"
               />
             </button>
             <button className="icon-button">
               <img
-                src="/assets/icons/instagram-icon.svg"
+                src="/assets/icons/1737d5e028e7ecb7605da2756202440f 1.svg"
                 alt="Instagram"
                 className="social-icon"
               />

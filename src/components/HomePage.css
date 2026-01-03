@@ -26,11 +26,10 @@
 }
 
 .logo-container {
-  background: #c6c6c6;
-  border: 2px solid #000;
-  padding: 10px;
-  box-shadow: inset 2px 2px 0 rgba(255, 246, 246, 0.9),
-    inset -2px -2px 0 rgba(98, 98, 98, 0.9), 2px 2px 0 rgba(0, 0, 0, 0.3);
+  background: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
   width: 65px;
   height: 80px;
   display: flex;
