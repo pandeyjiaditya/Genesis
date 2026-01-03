@@ -1,282 +1,312 @@
 .about-page {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   background: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 20px;
+  backdrop-filter: blur(17.5px);
 }
 
-/* Background with blur effect */
-.about-background {
+/* Background */
+.background-container {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("/assets/about genesis.png");
-  background-size: cover;
-  background-position: center;
   opacity: 0.73;
-  filter: blur(17.5px);
   z-index: 0;
 }
 
-/* Main Panel */
-.about-panel {
-  position: relative;
+.background-image {
+  position: absolute;
+  width: 137.61%;
+  height: 108.45%;
+  left: -16.03%;
+  top: -0.02%;
+  object-fit: cover;
+  max-width: none;
+}
+
+.blur-overlay {
+  position: absolute;
+  top: 707.5px;
+  left: 1689.5px;
+  width: 1164px;
+  height: 726px;
   z-index: 1;
-  width: 100%;
-  max-width: 1164px;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(17.5px);
-  border-radius: 3px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
-/* Header Section */
-.about-header {
-  position: relative;
-  height: 59px;
-  background: linear-gradient(180deg, #d9d9d9 0%, #8a8a8a 100%);
-  border-bottom: 4px solid #626262;
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-  box-shadow: 0 2px 0 #030303;
-}
-
-.header-top-border {
+/* Top Navigation Bar */
+.top-nav-bar {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.3);
+  width: 100%;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 20;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
 }
 
-.header-logo {
+.nav-separator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 68px;
+  z-index: 19;
+  pointer-events: none;
+}
+
+.separator-line {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: fill;
+}
+
+.nav-logo {
+  margin-left: 0;
+}
+
+.nav-logo .logo-container {
+  background: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
   width: 42px;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 20px;
 }
 
-.header-logo img {
+.genesis-icon {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
-.about-title {
+.nav-title {
   font-family: "Minecraft", "Press Start 2P", monospace;
   font-size: 36px;
+  font-weight: 500;
   color: #4c4c4c;
-  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
-  margin: 0;
-  flex: 1;
   text-align: center;
-  letter-spacing: 2px;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
 }
 
-/* Action Icons */
-.header-actions {
+.nav-icons {
   display: flex;
-  gap: 8px;
+  gap: 13px;
   align-items: center;
 }
 
-.action-icon {
-  width: 27px;
-  height: 27px;
+.icon-button {
   background: transparent;
   border: none;
-  cursor: pointer;
   padding: 0;
+  cursor: pointer;
   transition: transform 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.action-icon:hover {
+.icon-button:hover {
   transform: scale(1.1);
 }
 
-.action-icon:active {
+.icon-button:active {
   transform: scale(0.95);
 }
 
-.action-icon img {
-  width: 100%;
-  height: 100%;
+.social-icon {
+  width: 27px;
+  height: 27px;
   object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
-/* Content Wrapper */
-.about-content-wrapper {
-  padding: 30px 50px 50px;
-  position: relative;
-}
-
-.about-content-wrapper::before {
-  content: "";
+/* Main Content Box */
+.content-box {
   position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: #626262;
-  box-shadow: inset 2px 0 0 #000;
-}
-
-.about-content-wrapper::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: #626262;
-  box-shadow: inset -2px 0 0 #000;
-}
-
-/* Content Box */
-.about-content-box {
+  top: 124px;
+  left: 109px;
+  width: 1222px;
+  height: 683px;
   background: #c6c6c6;
   border: 2px solid #000;
-  padding: 40px 50px;
-  box-shadow: inset 3px 3px 0 rgba(255, 255, 255, 0.4),
-    inset -3px -3px 0 rgba(0, 0, 0, 0.2), 2px 2px 8px rgba(0, 0, 0, 0.3);
-  min-height: 485px;
+  box-shadow: inset 2px 2px 0 rgba(255, 246, 246, 0.5),
+    inset -2px -2px 0 rgba(98, 98, 98, 0.5), 4px 4px 0 rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.text-container {
+  padding: 26px 49px;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: flex-start;
 }
 
-/* About Text */
 .about-text {
   font-family: "Minecraftia", "Press Start 2P", monospace;
-  font-size: 36px;
-  line-height: 1.4;
+  font-size: 46px;
+  font-weight: 400;
+  line-height: normal;
   color: #000;
   text-align: justify;
+  letter-spacing: 5.06px;
   margin: 0;
-  letter-spacing: 0.5px;
+  white-space: pre-wrap;
+  max-width: 1126px;
 }
 
-/* Bottom Border */
-.about-panel::after {
-  content: "";
+/* Player Character */
+.player-character {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: #626262;
-  box-shadow: 0 -2px 0 #030303;
+  bottom: 18px;
+  right: 187px;
+  width: 171px;
+  height: 354px;
+  z-index: 15;
+}
+
+.player-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 /* Responsive Design */
-@media (max-width: 1200px) {
-  .about-title {
+@media (max-width: 1440px) {
+  .content-box {
+    width: 85%;
+    left: 7.5%;
+    height: auto;
+    min-height: 500px;
+  }
+
+  .about-text {
+    font-size: 36px;
+    letter-spacing: 4px;
+  }
+
+  .nav-title {
     font-size: 28px;
+  }
+
+  .player-character {
+    right: 50px;
+  }
+
+  .nav-separator {
+    height: 60px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .content-box {
+    width: 90%;
+    left: 5%;
+    top: 100px;
   }
 
   .about-text {
     font-size: 28px;
+    letter-spacing: 3px;
   }
 
-  .about-content-box {
-    padding: 35px 40px;
-    min-height: 400px;
+  .nav-title {
+    font-size: 24px;
+  }
+
+  .player-character {
+    width: 120px;
+    height: 248px;
+    right: 30px;
+    bottom: 10px;
+  }
+
+  .nav-separator {
+    height: 55px;
   }
 }
 
 @media (max-width: 768px) {
-  .about-panel {
-    max-width: 100%;
+  .content-box {
+    width: 95%;
+    left: 2.5%;
+    top: 80px;
+    padding: 15px;
   }
 
-  .about-header {
-    height: 50px;
-    padding: 0 15px;
-  }
-
-  .header-logo {
-    width: 32px;
-    height: 38px;
-    margin-right: 10px;
-  }
-
-  .about-title {
+  .about-text {
     font-size: 20px;
+    letter-spacing: 2px;
   }
 
-  .action-icon {
+  .nav-title {
+    font-size: 18px;
+  }
+
+  .logo-container {
+    width: 35px;
+    height: 40px;
+  }
+
+  .social-icon {
     width: 22px;
     height: 22px;
   }
 
-  .about-content-wrapper {
-    padding: 25px 30px 40px;
+  .player-character {
+    display: none;
   }
 
-  .about-content-box {
-    padding: 30px;
-    min-height: 350px;
+  .nav-separator {
+    height: 50px;
   }
 
-  .about-text {
-    font-size: 20px;
-    line-height: 1.5;
+  .top-nav-bar {
+    height: 50px;
   }
 }
 
 @media (max-width: 480px) {
-  .about-page {
-    padding: 20px 10px;
-  }
-
-  .about-header {
-    height: 45px;
-    padding: 0 10px;
-  }
-
-  .header-logo {
-    width: 28px;
-    height: 34px;
-    margin-right: 8px;
-  }
-
-  .about-title {
-    font-size: 16px;
-    letter-spacing: 1px;
-  }
-
-  .action-icon {
-    width: 20px;
-    height: 20px;
-  }
-
-  .header-actions {
-    gap: 6px;
-  }
-
-  .about-content-wrapper {
-    padding: 20px 15px 30px;
-  }
-
-  .about-content-box {
-    padding: 20px;
-    min-height: 300px;
-  }
-
   .about-text {
     font-size: 16px;
-    line-height: 1.6;
+    letter-spacing: 1.5px;
+  }
+
+  .nav-title {
+    font-size: 14px;
+  }
+
+  .content-box {
+    top: 70px;
+  }
+
+  .nav-separator {
+    height: 45px;
+  }
+
+  .top-nav-bar {
+    height: 45px;
   }
 }

@@ -80,56 +80,106 @@ export default function HomePage() {
 
       {/* About Section */}
       <section id="about" className="about-page">
-        {/* Background */}
-        <div className="about-background" />
+        {/* Background Image */}
+        <div className="background-container">
+          <img
+            src="/assets/8d169005389a6a17d38e8e059f24644c 1@3x.png"
+            alt="Background"
+            className="background-image"
+          />
+        </div>
 
-        {/* Main Content Panel */}
+        {/* Decorative blur element */}
+        <div className="blur-overlay"></div>
+
+        {/* White Line Separator */}
         <motion.div
-          className="about-panel"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          className="nav-separator"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          {/* Header Section */}
-          <div className="about-header">
-            {/* Top Border */}
-            <div className="header-top-border" />
+          <img
+            src="/assets/images/Group 1000012493.png"
+            alt="Separator"
+            className="separator-line"
+          />
+        </motion.div>
 
-            {/* Logo Icon */}
-            <div className="header-logo">
+        {/* Top Navigation Bar */}
+        <motion.div
+          className="top-nav-bar"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          {/* Top Left Logo */}
+          <div className="nav-logo">
+            <div className="logo-container">
               <img
-                src="/assets/icons/Frame 1618872227.svg"
+                src="/assets/icons/Group 1000012422 2.svg"
                 alt="Genesis Logo"
+                className="genesis-icon"
               />
             </div>
-
-            {/* Title */}
-            <h1 className="about-title">ABOUT GENESIS</h1>
-
-            {/* Action Icons */}
-            <div className="header-actions">
-              <button className="action-icon minimize-icon">
-                <img src="/assets/icons/Group 1000012486.svg" alt="Minimize" />
-              </button>
-              <button className="action-icon close-icon">
-                <img src="/assets/icons/Group 1000012482.svg" alt="Close" />
-              </button>
-            </div>
           </div>
 
-          {/* Content Box */}
-          <div className="about-content-wrapper">
-            <div className="about-content-box">
-              <p className="about-text">
-                Rev your engines and fasten your seat belts as the GDXR Club
-                kick-starts the Fifth Edition of Genesis - your ticket to an
-                adventure that hits closer to home than ever! Returning after
-                the 2025 Last Edition, this 2026 Genesis isn't just about pixels
-                and coding; it's about bringing the spirit of games to life.
-              </p>
-            </div>
+          {/* Navigation Title */}
+          <h1 className="nav-title">ABOUT GENESIS</h1>
+
+          {/* Top Right Icons */}
+          <div className="nav-icons">
+            <button className="icon-button">
+              <img
+                src="/assets/icons/discord-icon.svg"
+                alt="Discord"
+                className="social-icon"
+              />
+            </button>
+            <button className="icon-button">
+              <img
+                src="/assets/icons/instagram-icon.svg"
+                alt="Instagram"
+                className="social-icon"
+              />
+            </button>
           </div>
+        </motion.div>
+
+        {/* Main Content Box */}
+        <motion.div
+          className="content-box"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          <div className="text-container">
+            <p className="about-text">
+              Rev your engines and fasten your seat belts as the GDXR Club
+              kick-starts the Fifth Edition of Genesis - your ticket to an
+              adventure that hits closer to home than ever! Returning after the
+              2025 Last Edition, this 2026 Genesis isn't just about pixels and
+              coding; it's about bringing the spirit of games to life.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Player Character */}
+        <motion.div
+          className="player-character"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          <img
+            src="/assets/images/player-character.png"
+            alt="Player"
+            className="player-image"
+          />
         </motion.div>
       </section>
     </>
