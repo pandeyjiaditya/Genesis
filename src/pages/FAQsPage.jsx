@@ -130,15 +130,46 @@ export default function FAQsPage() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  // Generate random sparkle particles
+  const generateSparkles = () => {
+    return Array.from({ length: 50 }, (_, i) => ({
+      id: i,
+      left: Math.random() * 100,
+      top: Math.random() * 100,
+      delay: Math.random() * 5,
+      duration: 2 + Math.random() * 3,
+      size: 2 + Math.random() * 4,
+    }));
+  };
+
+  const sparkles = generateSparkles();
+
   return (
     <section className="faqs-page">
       {/* Background */}
       <div className="faqs-bg">
         <img
-          src="/assets/8d169005389a6a17d38e8e059f24644c 1@3x.png"
+          src="/assets/514824c77251b4e390d57f30a2693144 1.png"
           alt="Background"
           className="faqs-bg-img"
         />
+        {/* Sparkling lights animation */}
+        <div className="sparkles-container">
+          {sparkles.map((sparkle) => (
+            <div
+              key={sparkle.id}
+              className="sparkle"
+              style={{
+                left: `${sparkle.left}%`,
+                top: `${sparkle.top}%`,
+                animationDelay: `${sparkle.delay}s`,
+                animationDuration: `${sparkle.duration}s`,
+                width: `${sparkle.size}px`,
+                height: `${sparkle.size}px`,
+              }}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Separator Line */}
