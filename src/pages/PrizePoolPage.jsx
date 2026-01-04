@@ -1,10 +1,7 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
 import "./PrizePoolPage.css";
 
 export default function PrizePoolPage() {
-  const [selectedTrack, setSelectedTrack] = useState("track1");
-
   const bgImage =
     "https://www.figma.com/api/mcp/asset/827b965d-5e79-4c32-aa1d-0627db299cbd";
   const separatorImage =
@@ -22,8 +19,6 @@ export default function PrizePoolPage() {
     "/assets/prize-pool/Button7.png",
     "/assets/prize-pool/Button8.png",
   ];
-
-  const currentCards = selectedTrack === "track1" ? track1Cards : track2Cards;
 
   return (
     <section className="prize-pool-page">
@@ -64,54 +59,29 @@ export default function PrizePoolPage() {
         <h1 className="prize-pool-title">PRIZE POOL</h1>
       </motion.div>
 
-      {/* Prize Pool Content Image */}
-      <motion.div
-        className="prize-pool-content-container"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        viewport={{ once: false, amount: 0.3 }}
-      >
-        {/* Main Container with Borders */}
-        <div className="prize-pool-main-box">
-          {/* Left Panel - Track Selection */}
-          <div className="prize-pool-left-panel">
-            {/* Main Game Jam Track */}
-            <div
-              className={`prize-pool-track-card ${
-                selectedTrack === "track1" ? "active" : ""
-              }`}
-              onClick={() => setSelectedTrack("track1")}
-            >
-              <img
-                src="/assets/prize-pool/Group 1000012511.png"
-                alt="Main Game Jam Track"
-                className="prize-pool-track-btn"
-              />
-            </div>
-
-            {/* VR Track */}
-            <div
-              className={`prize-pool-track-card ${
-                selectedTrack === "track2" ? "active" : ""
-              }`}
-              onClick={() => setSelectedTrack("track2")}
-            >
-              <img
-                src="/assets/prize-pool/Group 1000012512.png"
-                alt="VR Track"
-                className="prize-pool-track-btn"
-              />
-            </div>
+      {/* Prize Pool Content */}
+      <div className="prize-pool-content-container">
+        {/* Track 1 Section */}
+        <motion.div
+          className="prize-pool-track-section"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: false, amount: 0.3 }}
+        >
+          <div className="prize-pool-track-header">
+            <img
+              src="/assets/prize-pool/Group 1000012511.png"
+              alt="Main Game Jam Track"
+              className="prize-pool-track-title-img"
+            />
           </div>
-
-          {/* Right Panel - Prize Cards */}
-          <div className="prize-pool-right-panel">
-            {currentCards.map((card, index) => (
+          <div className="prize-pool-cards-grid">
+            {track1Cards.map((card, index) => (
               <motion.img
-                key={index}
+                key={`track1-${index}`}
                 src={card}
-                alt={`Prize ${index + 1}`}
+                alt={`Main Game Jam Prize ${index + 1}`}
                 className="prize-pool-card-image"
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -119,8 +89,38 @@ export default function PrizePoolPage() {
               />
             ))}
           </div>
-        </div>
-      </motion.div>
+        </motion.div>
+
+        {/* Track 2 Section */}
+        <motion.div
+          className="prize-pool-track-section"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: false, amount: 0.3 }}
+        >
+          <div className="prize-pool-track-header">
+            <img
+              src="/assets/prize-pool/Group 1000012512.png"
+              alt="VR Track"
+              className="prize-pool-track-title-img"
+            />
+          </div>
+          <div className="prize-pool-cards-grid">
+            {track2Cards.map((card, index) => (
+              <motion.img
+                key={`track2-${index}`}
+                src={card}
+                alt={`VR Track Prize ${index + 1}`}
+                className="prize-pool-card-image"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+              />
+            ))}
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 }
