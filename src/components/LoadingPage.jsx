@@ -24,7 +24,6 @@ const LoadingPage = ({ onLoadComplete }) => {
   return (
     <div className="loading-page">
       <div className="loading-background"></div>
-
       {/* Genesis Logo */}
       <div className="genesis-logo-container">
         <img
@@ -33,20 +32,7 @@ const LoadingPage = ({ onLoadComplete }) => {
           className="genesis-logo-loading"
         />
       </div>
-
-      {/* Loading Spinner */}
-      <div className="loading-spinner">
-        <div className="pixel-block"></div>
-        <div className="pixel-block"></div>
-        <div className="pixel-block"></div>
-        <div className="pixel-block"></div>
-        <div className="pixel-block"></div>
-        <div className="pixel-block"></div>
-        <div className="pixel-block"></div>
-        <div className="pixel-block"></div>
-      </div>
-
-      {/* Loading Bar */}
+      {/* Loading Bar */}}
       <div className="loading-bar-container">
         <div className="loading-bar-outer">
           <div className="loading-bar-inner">
