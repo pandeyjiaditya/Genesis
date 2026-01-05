@@ -32,7 +32,7 @@ const LoadingPage = ({ onLoadComplete }) => {
           className="genesis-logo-loading"
         />
       </div>
-      {/* Loading Bar */}}
+      {/* Loading Bar */}
       <div className="loading-bar-container">
         <div className="loading-bar-outer">
           <div className="loading-bar-inner">
