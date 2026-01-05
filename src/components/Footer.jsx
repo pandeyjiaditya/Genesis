@@ -13,7 +13,7 @@ export default function Footer() {
         viewport={{ once: false, amount: 0.3 }}
       >
         <img
-          src="/assets/images/Player.png"
+          src="/assets/images/8f5cd03a-5893-49bc-ab10-75bdf47771d6 1_layerstyle.png"
           alt="Minecraft Character"
           className="character-img"
         />
