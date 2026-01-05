@@ -4,57 +4,28 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: center;
   padding: 0;
   overflow: hidden;
+  background-image: url("/assets/images/Group 1000012519.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   background-color: #000;
-  backdrop-filter: blur(17.5px);
   cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath fill='%23000' d='M4 4h4v4H4zM8 8h4v4H8zM12 12h4v4h-4zM16 16h4v4h-4zM8 16h4v4H8zM4 20h4v4H4zM12 20h4v4h-4zM16 24h4v4h-4z'/%3E%3Cpath fill='%23fff' d='M8 4h4v4H8zM12 8h4v4h-4zM16 12h4v4h-4zM20 16h4v4h-4zM12 16h4v4h-4zM8 20h4v4H8zM16 20h4v4h-4zM20 24h4v4h-4z'/%3E%3C/svg%3E")
       0 0,
     auto;
 }
 
-/* Background Layer 1 */
+/* Background Layer */
 .prize-pool-bg-blur {
   position: absolute;
   top: 0;
-  left: -231px;
-  width: 1983px;
-  height: 1110px;
-  opacity: 0.73;
-  z-index: 1;
-}
-
-.prize-pool-bg-img-1 {
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-}
-
-/* Background Layer 2 */
-.prize-pool-bg-effect {
-  position: absolute;
-  top: 35px;
-  left: -223px;
-  width: 1731px;
-  height: 989px;
+  background: transparent;
   z-index: 1;
-}
-
-.prize-pool-bg-img-2 {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Navigation Container */
-.prize-pool-nav-container {
-  position: relative;
-  z-index: 3;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
 }
 
 /* Separator Container */
@@ -71,58 +42,6 @@
   height: 100%;
   object-fit: cover;
   display: block;
-}
-
-/* Prize Pool Content Container */
-.prize-pool-content-container {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  width: 100%;
-  max-width: 1360px;
-  padding: 40px 20px;
-  margin: 0 auto;
-}
-
-/* Track Section */
-.prize-pool-track-section {
-  background: rgba(255, 255, 255, 0.05);
-  border: 2px solid #626262;
-  padding: 30px;
-  border-radius: 4px;
-}
-
-/* Track Header */
-.prize-pool-track-header {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 30px;
-}
-
-.prize-pool-track-title-img {
-  max-width: 300px;
-  height: auto;
-  object-fit: contain;
-}
-
-/* Cards Grid */
-.prize-pool-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  justify-items: center;
-}
-
-.prize-pool-card-image {
-  width: 100%;
-  max-width: 400px;
-  height: 150px;
-  object-fit: contain;
-  display: block;
-  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
-  border-radius: 4px;
 }
 
 .prize-pool-title {
@@ -142,217 +61,417 @@
   padding: 0 20px;
 }
 
+/* Prize Tiles Layout */
+.prize-tiles-row {
+  display: flex;
+  gap: 36px;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 50px auto;
+  position: relative;
+  z-index: 2;
+  flex-wrap: wrap;
+  max-width: 1300px;
+}
+
+.prize-tile {
+  width: 372px;
+  background: #ddd;
+  position: relative;
+  border: 3px solid #000;
+  box-shadow: 0 8px 0 #252525;
+  overflow: visible;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: floatTile 3s ease-in-out infinite;
+}
+
+@keyframes floatTile {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.prize-tile:hover {
+  box-shadow: 0 12px 0 #252525, 0 0 30px rgba(255, 215, 0, 0.4);
+  border-color: rgba(255, 215, 0, 0.6);
+}
+
+.prize-1st:hover {
+  box-shadow: 0 12px 0 #252525, 0 0 40px rgba(255, 215, 0, 0.7);
+}
+
+.prize-2nd:hover {
+  box-shadow: 0 12px 0 #252525, 0 0 40px rgba(192, 192, 192, 0.7);
+}
+
+.prize-3rd:hover {
+  box-shadow: 0 12px 0 #252525, 0 0 40px rgba(205, 127, 50, 0.7);
+}
+
+.prize-4th:hover,
+.prize-5th:hover {
+  box-shadow: 0 12px 0 #252525, 0 0 40px rgba(86, 157, 196, 0.7);
+}
+
+.prize-tile:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.prize-tile:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.prize-tile-header {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: "Minecraftia", sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+  padding: 0 10px;
+}
+
+.prize-tile-header .rank {
+  font-family: "Minecraft Ten", "Minecraftia", sans-serif;
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.prize-tile-header .rank-suffix {
+  font-family: "Minecraftia", sans-serif;
+  font-size: 25px;
+  align-self: flex-start;
+  margin-top: 8px;
+}
+
+.prize-tile-header .label {
+  font-size: 64px;
+  font-family: "Minecraft Ten", "Minecraftia", sans-serif;
+  margin-left: 8px;
+  font-weight: 400;
+}
+
+.prize-tile-body {
+  height: 306px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  border-top: 3px solid rgba(0, 0, 0, 0.2);
+}
+
+.prize-icon {
+  position: absolute;
+  top: 40px;
+  width: 158px;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+  animation: floatIcon 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+}
+
+@keyframes floatIcon {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+}
+
+.prize-tile:hover .prize-icon {
+  animation: spinIcon 0.6s ease-in-out;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
+}
+
+@keyframes spinIcon {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(360deg) scale(1.1);
+  }
+  100% {
+    transform: translateY(0px) rotate(360deg);
+  }
+}
+
+.prize-amount {
+  font-family: "Minecraft Ten", "Minecraftia", sans-serif;
+  font-size: 100px;
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+  letter-spacing: -2px;
+  font-weight: 400;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Color variants - Figma gradients */
+.gold {
+  background: linear-gradient(
+    180deg,
+    #dfc84a 7.6%,
+    #e2ca4f 60.7%,
+    #ecce4a 98.4%
+  );
+}
+.gold-bg {
+  background: linear-gradient(180deg, #dec546 0%, #dec546 100%);
+}
+
+.silver {
+  background: linear-gradient(
+    180deg,
+    #89888d 7.6%,
+    #9d9da2 60.7%,
+    #acabb0 98.4%
+  );
+}
+.silver-bg {
+  background: linear-gradient(180deg, #8d8c92 0%, #8d8c92 100%);
+}
+
+.bronze {
+  background: linear-gradient(
+    180deg,
+    #c09372 7.6%,
+    #c6a187 60.7%,
+    #ccb2a3 98.4%
+  );
+}
+.bronze-bg {
+  background: linear-gradient(180deg, #bc947a 0%, #bc947a 100%);
+}
+
+.deep {
+  background: linear-gradient(
+    180deg,
+    #20192b 7.6%,
+    #282239 60.7%,
+    #312847 98.4%
+  );
+}
+.deep-bg {
+  background: linear-gradient(180deg, #362c4e 0%, #362c4e 100%);
+}
+
+.blue {
+  background: linear-gradient(
+    180deg,
+    #569dc4 7.6%,
+    #56a6cb 60.7%,
+    #61b6da 98.4%
+  );
+}
+.blue-bg {
+  background: linear-gradient(180deg, #4c95b5 0%, #4c95b5 100%);
+}
+
+/* VR Track Button */
+.vr-track-container {
+  display: flex;
+  justify-content: center;
+  margin: 40px auto;
+  position: relative;
+  z-index: 2;
+}
+
+.vr-track-button {
+  background: #3e3937;
+  color: #fff;
+  padding: 26px 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  border: none;
+  box-shadow: 0 8px 0 #252525, inset 4px 4px 0 #66615f,
+    inset -4px -4px 0 #514d4b;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.vr-track-button:hover {
+  transform: translateY(2px);
+}
+
+.vr-track-button:active {
+  transform: translateY(6px);
+  box-shadow: 0 2px 0 #252525, inset 4px 4px 0 #66615f,
+    inset -4px -4px 0 #514d4b;
+}
+
+.vr-track-image {
+  width: 123px;
+  height: 127px;
+  overflow: hidden;
+  position: relative;
+}
+
+.vr-track-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.vr-track-label {
+  font-family: "Minecraft Ten", "Minecraftia", sans-serif;
+  font-size: 96px;
+  letter-spacing: 0;
+  font-weight: 400;
+  line-height: 1;
+}
+
+/* Navigation Container */
+.prize-pool-nav-container {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
 /* Responsive Design */
-@media (max-width: 1440px) {
-  .prize-pool-title {
-    font-size: 32px;
+@media (max-width: 1200px) {
+  .prize-tiles-row {
+    gap: 28px;
   }
-
-  .prize-pool-separator-container {
-    height: 65px;
+  .prize-tile {
+    width: 340px;
   }
-
-  .prize-pool-main-box {
-    max-width: 1200px;
-    padding: 25px;
-    gap: 15px;
+  .prize-amount {
+    font-size: 90px;
   }
-
-  .prize-pool-left-panel {
-    flex: 0 0 280px;
-    padding-right: 25px;
-  }
-
-  .prize-pool-track-card {
-    height: 110px;
-  }
-
-  .prize-pool-card {
-    height: 140px;
-  }
-
-  .prize-pool-card-image {
-    height: 140px;
-  }
-
-  .prize-pool-rank-number {
-    font-size: 42px;
-  }
-
-  .prize-pool-rank-label {
-    font-size: 28px;
-  }
-
-  .prize-pool-amount {
-    font-size: 48px;
+  .vr-track-label {
+    font-size: 80px;
   }
 }
 
 @media (max-width: 1024px) {
-  .prize-pool-title {
-    font-size: 28px;
+  .prize-tile {
+    width: 300px;
   }
-
-  .prize-pool-separator-container {
-    height: 60px;
+  .prize-tile-body {
+    height: 270px;
   }
-
-  .prize-pool-main-box {
-    max-width: 1000px;
-    flex-direction: column;
-    padding: 20px;
+  .prize-amount {
+    font-size: 80px;
   }
-
-  .prize-pool-left-panel {
-    flex: 1;
-    flex-direction: row;
-    gap: 15px;
-    border-right: none;
-    border-bottom: 4px solid #626262;
-    padding-right: 0;
-    padding-bottom: 20px;
+  .prize-icon {
+    width: 130px;
   }
-
-  .prize-pool-track-card {
-    flex: 1;
-    height: 100px;
+  .vr-track-label {
+    font-size: 64px;
   }
-
-  .prize-pool-card {
-    height: 130px;
-  }
-
-  .prize-pool-card-image {
-    height: 130px;
-  }
-
-  .prize-pool-rank-number {
-    font-size: 36px;
-  }
-
-  .prize-pool-rank-label {
-    font-size: 24px;
-  }
-
-  .prize-pool-amount {
-    font-size: 42px;
-  }
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .prize-pool-cards-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-  }
-
-  .prize-pool-track-title-img {
-    max-width: 250px;
+  .vr-track-image {
+    width: 100px;
+    height: 104px;
   }
 }
 
 @media (max-width: 768px) {
-  .prize-pool-content-container {
-    padding: 30px 15px;
-    gap: 30px;
+  .prize-tiles-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin: 30px auto;
   }
-
-  .prize-pool-track-section {
-    padding: 20px;
+  .prize-tile {
+    width: 90%;
+    max-width: 380px;
   }
-
-  .prize-pool-track-title-img {
-    max-width: 200px;
+  .prize-amount {
+    font-size: 72px;
   }
-
-  .prize-pool-cards-grid {
-    grid-template-columns: 1fr;
+  .vr-track-button {
+    padding: 20px 30px;
     gap: 15px;
   }
-
-  .prize-pool-card-image {
-    max-width: 100%;
-    height: 120px;
+  .vr-track-label {
+    font-size: 56px;
+  }
+  .vr-track-image {
+    width: 80px;
+    height: 84px;
+  }
+  .prize-pool-title {
+    font-size: 28px;
   }
 }
 
 @media (max-width: 600px) {
+  .prize-tile {
+    width: 95%;
+  }
+  .prize-tile-header .label {
+    font-size: 48px;
+  }
+  .prize-tile-header .rank {
+    font-size: 48px;
+  }
+  .prize-tile-body {
+    height: 240px;
+  }
+  .prize-amount {
+    font-size: 60px;
+  }
+  .prize-icon {
+    width: 110px;
+    top: 30px;
+  }
+  .vr-track-label {
+    font-size: 44px;
+  }
   .prize-pool-title {
-    font-size: 20px;
-  }
-
-  .prize-pool-separator-container {
-    height: 50px;
-  }
-
-  .prize-pool-content-container {
-    padding: 20px 10px;
-    gap: 20px;
-  }
-
-  .prize-pool-track-section {
-    padding: 15px;
-  }
-
-  .prize-pool-track-title-img {
-    max-width: 180px;
-  }
-
-  .prize-pool-card-image {
-    height: 100px;
+    font-size: 24px;
   }
 }
 
 @media (max-width: 480px) {
+  .prize-tile-header {
+    height: 56px;
+  }
+  .prize-tile-header .label {
+    font-size: 40px;
+  }
+  .prize-tile-header .rank {
+    font-size: 40px;
+  }
+  .prize-tile-header .rank-suffix {
+    font-size: 20px;
+  }
+  .prize-tile-body {
+    height: 200px;
+  }
+  .prize-amount {
+    font-size: 48px;
+  }
+  .vr-track-label {
+    font-size: 36px;
+  }
+  .vr-track-button {
+    padding: 16px 24px;
+  }
   .prize-pool-title {
-    font-size: 16px;
+    font-size: 20px;
   }
-
   .prize-pool-separator-container {
-    height: 45px;
-  }
-
-  .prize-pool-content-container {
-    padding: 15px 8px;
-    gap: 15px;
-  }
-
-  .prize-pool-track-section {
-    padding: 12px;
-  }
-
-  .prize-pool-track-title-img {
-    max-width: 150px;
-  }
-
-  .prize-pool-card-image {
-    height: 90px;
-  }
-}
-
-@media (max-width: 360px) {
-  .prize-pool-title {
-    font-size: 14px;
-  }
-
-  .prize-pool-separator-container {
-    height: 40px;
-  }
-
-  .prize-pool-content-container {
-    padding: 12px 5px;
-    gap: 12px;
-  }
-
-  .prize-pool-track-section {
-    padding: 10px;
-  }
-
-  .prize-pool-track-title-img {
-    max-width: 120px;
-  }
-
-  .prize-pool-card-image {
-    height: 80px;
+    height: 50px;
   }
 }
