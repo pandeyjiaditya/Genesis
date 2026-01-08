@@ -7,7 +7,7 @@ import TimelinePage from "./pages/TimelinePage";
 import PrizePoolPage from "./pages/PrizePoolPage";
 import MemoriesPage from "./pages/MemoriesPage";
 import "./App.css";
-import { Analytics } from "@vercel/analytics/next";
+
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
