@@ -123,8 +123,17 @@ export default function HomePage() {
       {/* Hero Section */}
       <section id="home" className="home-page">
         {/* Background Video */}
-        <video className="background-video" autoPlay loop muted playsInline>
+        <video
+          className="background-video"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          onError={(e) => console.error("Video loading error:", e)}
+        >
           <source src="/assets/main page video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
         </video>
 
         {/* Top Left Logo */}

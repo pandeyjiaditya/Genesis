@@ -196,11 +196,12 @@
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  will-change: contents;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+  will-change: auto;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  backface-visibility: visible;
+  -webkit-backface-visibility: visible;
+  display: block;
 }
 
 /* Top Left Logo */
